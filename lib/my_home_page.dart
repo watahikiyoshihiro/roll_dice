@@ -19,7 +19,7 @@ class MyHomePage extends ConsumerWidget {
         children: [
           Center(
             child: Image.asset(
-              'assets/images/apple$diceNum.jpeg',
+              'assets/images/apple$diceNum.jpeg', //画像を指定
               width: 100,
               height: 100,
             ),
