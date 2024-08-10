@@ -12,27 +12,37 @@ class MyHomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Roll Dice'),
+        title: const Text('Roll Dice'), //comment
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Image.asset(
-              'assets/images/apple$diceNum.jpeg', //画像を指定
-              width: 100,
-              height: 100,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue, Colors.red],
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('$diceNum', style: const TextStyle(fontSize: 50)),
+            Center(
+              child: Image.asset(
+                'assets/images/apple$diceNum.jpeg', //画像を指定
+                width: 100,
+                height: 100,
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          IconButton(
-            onPressed: () {
-              ref.read(diceRollNotifierProvider.notifier).roll();
-            },
-            icon: const Icon(Icons.face),
-            iconSize: 50,
-          ),
-        ],
+            const SizedBox(height: 20),
+            IconButton(
+              onPressed: () {
+                ref.read(diceRollNotifierProvider.notifier).roll();
+              },
+              icon: const Icon(Icons.face),
+              iconSize: 50,
+            ),
+          ],
+        ),
       ),
     );
   }
