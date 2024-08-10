@@ -12,7 +12,7 @@ class MyHomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Roll Dice'), //comment
+        title: const Text('Roll Dice'), //comment out this line
       ),
       body: Container(
         decoration: const BoxDecoration(
